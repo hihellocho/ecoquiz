@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+}
+
+// 첫화면 카테고리
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-wrap,
+.quizpage-wrap {
+  width: 400px;
+  height: 820px;
+  background-color: rgb(0, 95, 219);
+  border-radius: 30px;
+  position: relative;
+  .main {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #eee;
+    p {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    h1 {
+      font-size: 9rem;
+      font-weight: bolder;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      color: rgb(241, 217, 0);
+      margin: -1rem;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    .category-wrap {
+      margin-top: 4rem;
+      text-align: center;
+      button {
+        margin: 0.5rem;
+        cursor: pointer;
+        width: 18rem;
+        height: 5rem;
+        border-radius: 20px;
+        border: transparent;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        color: rgb(0, 95, 219);
+        font-size: 1rem;
+        font-weight: bolder;
+        &:hover {
+          background-color: rgb(255, 249, 191);
+        }
+      }
+    }
+  }
+}
+
+// 퀴즈 페이지
+.quizpage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .quizpage-wrap {
+    text-align: center;
+    padding: 2rem;
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #eee;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bolder;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      color: rgb(241, 217, 0);
+      margin: 2rem 0;
+    }
+    .quizbox-wrap{
+      background-color: #eee;
+      height: 80%;
+      // padding: 5rem 1rem;
+      border-radius: 30px;
+      h3{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+        color: rgb(0, 95, 219);
+      }
+      .ox-box{
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+        margin: 0.5rem;
+        padding: 2.5rem;
+        cursor: pointer;
+        border-radius: 20px;
+        border: transparent;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        color: #eee;
+        background-color: rgb(0, 95, 219);
+        font-size: 5rem;
+        font-weight: bolder;
+        &:hover {
+          background-color: rgb(0, 67, 212);
+        }
+      }
+      }
+    }
+  }
+}
