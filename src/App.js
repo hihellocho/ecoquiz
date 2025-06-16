@@ -1,16 +1,33 @@
 import "./App.scss";
 import { useState } from "react";
+import ecoData from "./data/ecoData.js";
 import Category from './Component/Category.js';
 import QuizPage from "./Component/QuizPage.js";
-import ecoData from "./data/ecoData.js";
-
+import Result from "./Component/Result.js";
 
 const App = () => {
   const [categories, setCategories]=useState("");
-
-  const onSelectCategory =(select)=>{
-    setCategories(select);
+  const [filterQuiz, setFilterQuiz] = useState("");
+  const [score, setScore] = useState(0);
+  const handleRestart=()=>{
+    setCategories("");
+    setFinished(false);
   }
+  
+  const [finished, setFinished] = useState(false);
+  const onSelectCategory = (select) => {
+    setCategories(select);
+
+    const quizArr = ecoData.quizzes.filter((data) => {
+      return data.category === select;
+    });
+    setFilterQuiz(quizArr);
+  };
+
+  const handleFinish = (score) => {
+    setFinished(true);
+    setScore(score);
+  };
 
   return (
     <div className="app">
@@ -20,9 +37,18 @@ const App = () => {
       onSelected={onSelectCategory}
       />
       )}
-      {categories &&(
-      <QuizPage quizzesData={categories.quizzes} />
+      {categories && !finished &&(
+      <QuizPage
+      quiz={filterQuiz}
+      onFinished={handleFinish}
+      appScore={score}/>
       )}
+      {finished &&
+      <Result
+      appScore={score}
+      onRestart={handleRestart}
+      />
+      }
     </div>
   );
 };
