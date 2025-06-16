@@ -17,10 +17,11 @@ const App = () => {
       {!categories &&(
       <Category
       cardData={ecoData.categories}
-      onSelected={onSelectCategory}/>
+      onSelected={onSelectCategory}
+      />
       )}
       {categories &&(
-      <QuizPage cardData={categories.quizzes} />
+      <QuizPage quizzesData={categories.quizzes} />
       )}
     </div>
   );
