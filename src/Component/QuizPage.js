@@ -1,6 +1,6 @@
 import { useState } from "react";
-
-const QuizPage = ({ quiz, onFinished, appScore }) => {
+ 
+const QuizPage = ({ quiz, onFinished }) => {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [ score, setScore ] = useState(0);
   const currentQuiz = quiz[currentIdx];
